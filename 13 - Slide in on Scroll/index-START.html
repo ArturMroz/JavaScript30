@@ -7,7 +7,6 @@
 </head>
 
 <body>
-
   <div class="site-wrap">
 
     <h1>Slide in on Scroll</h1>
@@ -157,7 +156,7 @@
         };
         var callNow = immediate && !timeout;
         clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
+        timeout = setTimeout(later, wait); 
         if (callNow) func.apply(context, args);
       };
     }

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Videos</title>
 </head>
+
 <body>
+  <h1>Total time: ...</h1>
   <ul class="videos">
     <li data-time="5:43">
       Video 1
@@ -181,7 +184,81 @@
       Video 58
     </li>
   </ul>
-<script>
-</script>
+  <script>
+    const timeNodes = document.querySelectorAll('[data-time]');
+
+    const totalSeconds = Array.from(timeNodes).reduce((total, current) => {
+      const currentTime = current.dataset.time;
+      const [m, s] = currentTime.split(':').map(Number);
+      return total + (m * 60) + s;
+    }, 0);
+
+    const seconds = totalSeconds % 60;
+    let minutes = Math.floor(totalSeconds / 60);
+    const hours = Math.floor(minutes / 60);
+    minutes %= 60;
+
+    // console.log(hours, minutes, seconds);
+    document.querySelector('h1').innerHTML = `Total time: ${hours}:${minutes}:${seconds}`;
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      display: grid;
+      align-content: center;
+      background: linear-gradient(to left top, coral, plum);
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 55px;
+      color: white;
+      text-shadow: 0px 4px rgba(0, 0, 0, 0.05);
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 50px 100px;
+      display: grid;
+      grid-gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-auto-rows: 60px;
+      list-style: none;
+      background: white;
+      box-shadow: 0 0 0px 10px rgba(0, 0, 0, 0.1);
+      padding: 14px;
+      border-radius: 5px;
+    }
+
+    ul li {
+      display: grid;
+      place-content: center;
+      padding: 12px 35px;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      color: #555;
+      box-shadow: 0px 5px 0px -3px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    ul li:after {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      content: attr(data-time);
+      margin-top: 5px;
+      font-size: 11px;
+      text-align: center;
+      color: #999;
+    }
+
+    ul li:hover {
+      color: #111;
+      background: #fbfbfb;
+      box-shadow: 0px 8px 0px -4px rgba(0, 0, 0, 0.04);
+      top: -2px;
+    }
+  </style>
 </body>
+
 </html>
