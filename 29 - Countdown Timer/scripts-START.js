@@ -24,8 +24,6 @@ function timer(seconds) {
 function displayTimeLeft(seconds) {
   const minutes = Math.floor(seconds / 60);
   seconds %= 60;
-  // console.log(minutes, seconds);
-  // const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
   const display = `${minutes}:${pad(seconds)}`;
   timerDisplay.textContent = display;
   document.title = display;
@@ -45,7 +43,7 @@ function pad(time) {
 
 function startTimer(e) {
   const seconds = Number(this.dataset.time)
-  console.log(seconds);
+  // console.log(seconds);
   timer(seconds);
 }
 
@@ -55,7 +53,7 @@ buttons.forEach(btn => btn.addEventListener('click', startTimer));
 document.customForm.addEventListener('submit', function(e) {
   e.preventDefault();
   const minutes = this.minutes.value;
-  console.log(minutes);
+  // console.log(minutes);
   this.reset();
   timer(minutes * 60);
 })
