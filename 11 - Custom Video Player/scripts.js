@@ -48,8 +48,8 @@ function handleKeyup(e) {
 }
 
 function skip() {
-  // video.currentTime += parseFloat(this.dataset.skip);
-  video.currentTime += 0.1;
+  video.currentTime += parseFloat(this.dataset.skip);
+  // video.currentTime += 0.1;
 }
 
 function handleRangeUpdate() {
@@ -65,8 +65,6 @@ function handleProgress() {
 function scrub(e) {
   const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
   video.currentTime = scrubTime;
-  console.log(e);
-
 }
 
 video.addEventListener('click', togglePlay);

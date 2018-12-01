@@ -31,7 +31,6 @@
       border-bottom: 0;
     }
 
-
     input:checked+p {
       background: #F9F9F9;
       text-decoration: line-through;
@@ -77,11 +76,11 @@
     </div>
     <div class="item">
       <input type="checkbox">
-      <p>Everything inbetween should also be set to checked</p>
+      <p>Everything inbetween will also be set to checked</p>
     </div>
     <div class="item">
       <input type="checkbox">
-      <p>Try do it without any libraries</p>
+      <p>This is done without any libraries</p>
     </div>
     <div class="item">
       <input type="checkbox">
@@ -89,17 +88,12 @@
     </div>
     <div class="item">
       <input type="checkbox">
-      <p>Good Luck!</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Don't forget to tweet your result!</p>
+      <p>Pretty nifty.</p>
     </div>
   </div>
 
   <script>
     const checkboxes = document.querySelectorAll('.item input');
-    // console.log(checkboxes);
     let lastChecked;
 
     function handleCheck(e) {
@@ -122,28 +116,6 @@
     }
 
     checkboxes.forEach(item => item.addEventListener('click', handleCheck));
-
-    //     checkboxes.forEach(item => item.addEventListener('click', function (e) {
-    //       // console.log(e);
-    //       if (e.shiftKey && lastChecked && this.checked) {
-
-    // // <!-- 
-    // //         const arr = Array.from(checkboxes);
-    // //         const idOfLast = arr.indexOf(lastChecked);
-    // //         const idOfCurrent = arr.indexOf(e.target);
-
-    // //         if (idOfLast < idOfCurrent) {
-    // //           arr.filter(el => arr.indexOf(el) >= idOfLast && arr.indexOf(el) < idOfCurrent)
-    // //             .forEach(el => el.checked = true);
-    // //         } else {
-    // //           arr.filter(el => arr.indexOf(el) <= idOfLast && arr.indexOf(el) > idOfCurrent)
-    // //           .forEach(el => el.checked = true);
-
-    //         }
-
-
-    //       lastChecked = e.target;
-    //       }
   </script>
 </body>
 
