@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800|Source+Sans+Pro:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet">
+
+  <link href="./assets/style.css" rel="stylesheet">
+  <title>JavaScrip30 Challenge</title>
+
+</head>
+
+<body>
+  <div class="hero">
+    <h1>JavaScript30 Challenge</h1>
+    <!-- <h2>No frameworks, no compilers, no boilerplate, no libraries</h2> -->
+    <p>These are the things I've built following a vanilla JavaScript course <a href="https://javascript30.com/" target="_blank">
+        JavaScript30</a> by <a href="https://wesbos.com" target="_blank">Wes Bos</a>.
+      <br>All images used are from <a href="https://unsplash.com/">Unsplash</a>.</p>
+
+  </div>
+  <section class="gallery">
+
+  </section>
+
+  <script>
+    const slides = [{
+        title: "Drum Kit",
+        img: "drums2.jpg",
+        link: "01 - JavaScript Drum Kit/index-START.html"
+      },
+      {
+        title: "Clock",
+        img: "clock.jpg",
+        link: "02 - JS and CSS Clock/index-START.html"
+      },
+      {
+        title: "CSS Variables",
+        img: "code.jpg",
+        link: "03 - CSS Variables/index-START.html"
+      },
+      {
+        title: "Flex Gallery",
+        img: "gallery2.jpg",
+        link: "05 - Flex Panel Gallery/index-START.html"
+      },
+      {
+        title: "Type Ahead",
+        img: "search.jpg",
+        link: "06 - Type Ahead/index-START.html"
+      },
+      {
+        title: "HTML5 Canvas",
+        img: "canvas4.jpg",
+        link: "08 - Fun with HTML5 Canvas/index-START.html"
+      },
+      {
+        title: "Checkbox Fun",
+        img: "checkbox.jpg",
+        link: "10 - Hold Shift and Check Checkboxes/index-START.html"
+      },
+      {
+        title: "Video Player",
+        img: "cinema.jpg",
+        link: "11 - Custom Video Player/index.html"
+      },
+      {
+        title: "Code Detection",
+        img: "snes2.jpg",
+        link: "12 - Key Sequence Detection/index-START.html"
+      },
+      {
+        title: "Slide in on Scroll",
+        img: "slide.jpg",
+        link: "13 - Slide in on Scroll/index-START.html"
+      },
+      {
+        title: "Local Storage",
+        img: "storage.jpg",
+        link: "15 - LocalStorage/index-START.html"
+      },
+      {
+        title: "Mouse Shadow",
+        img: "darkmouse.jpg",
+        link: "16 - Mouse Move Shadow/index-START.html"
+      },
+      {
+        title: "Sort Without Articles",
+        img: "sorting.jpg",
+        link: "17 - Sort Without Articles/index-START.html"
+      },
+      {
+        title: "Adding Up Times",
+        img: "calculator.jpg",
+        link: "18 - Adding Up Times with Reduce/index-START.html"
+      },
+      {
+        title: "Follow Along Link Highliter",
+        img: "link.jpg",
+        link: "22 - Follow Along Link Highlighter/index-START.html"
+      },
+      {
+        title: "Sticky Navigation",
+        img: "navigation.jpg",
+        link: "24 - Sticky Nav/index-START.html"
+      },
+      {
+        title: "Follow Along Nav",
+        img: "follow2.jpg",
+        link: "/26 - Stripe Follow Along Navindex-START.html"
+      },
+      {
+        title: "Click & Drag",
+        img: "grab.jpg",
+        link: "27 - Click and Drag/index-START.html"
+      },
+      {
+        title: "Speed controller",
+        img: "speedometer.jpg",
+        link: "28 - Video Speed Controller/index-START.html"
+      },
+      {
+        title: "Countdown Timer",
+        img: "hourglass.jpg",
+        link: "29 - Countdown Timer/index.html"
+      },
+      {
+        title: "Whack a Mole",
+        img: "mole.jpg",
+        link: "30 - Whack A Mole/index-START.html"
+      },
+    ];
+
+    const gallery = document.querySelector('.gallery');
+    const content = slides.map((slide, index) =>
+      `<a class="item" data-link="${slide.link}" href="${slide.link}" target="_blank">
+        <img src="./assets/img/${slide.img}">
+        <div class="item__desc">
+          <span class="desc__number">${index + 1}</span>
+          <h3>${slide.title}</h3>
+        </div>
+      </a>`
+    ).join('');
+
+    gallery.innerHTML = content;
+  </script>
+
+</body>
+
+</html>
