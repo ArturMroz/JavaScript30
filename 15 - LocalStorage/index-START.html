@@ -33,8 +33,8 @@
     <form class="add-items">
       <input type="text" name="item" placeholder="Item Name" required>
       <input type="submit" value="+ Add Item">
-      <input type="button" class="select-all" value="✔️ Select all"> 
-      <input type="button" class="unselect-all" value="✖️ Unselect all"> 
+      <input type="button" class="select-all" value="✔️ Select all">
+      <input type="button" class="unselect-all" value="✖️ Unselect all">
       <input type="button" class="clear-all" value="🗑️ Clear all">
     </form>
   </div>
@@ -84,7 +84,7 @@
     function toggleDone(e) {
       if (!e.target.matches('input')) return;
 
-      const el = e.target; 
+      const el = e.target;
       const index = el.dataset.index;
 
       items[index].done = !items[index].done;
@@ -106,7 +106,7 @@
     unselectAllButton.addEventListener('click', toggleAll);
     clearAllButton.addEventListener('click', clearAll);
 
-    itemsList.addEventListener('click',toggleDone);
+    itemsList.addEventListener('click', toggleDone);
     addItems.addEventListener('submit', addItem);
 
     populateList(items, itemsList);
