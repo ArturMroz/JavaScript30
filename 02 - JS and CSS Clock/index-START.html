@@ -47,7 +47,6 @@
       /* filter: saturate(90%) grayscale(0.04); */
     }
 
-
     .clock {
       width: 40rem;
       height: 40rem;
@@ -128,38 +127,38 @@
       }
     }
 
+    // function setDate() {
+    //   const now = new Date();
+
+    //   const seconds = now.getSeconds();
+    //   const secondsDegrees = getDegrees(seconds / 60);
+    //   secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+    //   const minutes = now.getMinutes();
+    //   const minutesDegrees = getDegrees(minutes / 60);
+    //   minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+
+    //   const hours = now.getHours() % 12;
+    //   const hoursDegrees = getDegrees(hours / 12);
+    //   hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+    // }
+
     function setDate() {
       const now = new Date();
 
       const seconds = now.getSeconds();
+
       const secondsDegrees = getDegrees(seconds / 60);
       secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
       const minutes = now.getMinutes();
       const minutesDegrees = getDegrees(minutes / 60);
-      minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
-
-      const hours = now.getHours() % 12;
-      const hoursDegrees = getDegrees(hours / 12);
-      hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
-    }
-
-    function setDate() {
-      const now = new Date();
-
-      const seconds = now.getSeconds();
-      const secondsDegrees = getDegrees(seconds / 60);
-      secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
-
-      const minutes = now.getMinutes();
-      const minutesDegrees = getDegrees(minutes / 60);
-      // const extraDeg = secondsDegrees / 60;
       minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
 
       const hours = now.getHours() % 12;
       const hoursDegrees = getDegrees(hours / 12);
       // smoothen the hour hand movement
-      const extraDeg = minutesDegrees / 12;
+      const extraDeg = (minutesDegrees - 90) / 12;
       hourHand.style.transform = `rotate(${hoursDegrees + extraDeg}deg)`;
     }
 
