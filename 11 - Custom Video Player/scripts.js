@@ -28,7 +28,7 @@ function handleKeyup(e) {
   console.log(e.code);
 
   const playbackRateInput = document.querySelector('#playbackRateInput');
-  const playbackRateOutput = document.querySelector('#playbackRateOutput');
+  // const playbackRateOutput = document.querySelector('#playbackRateOutput');
 
   let skipTime = 0.1;
   if (e.shiftKey) skipTime *= 10;
@@ -41,10 +41,10 @@ function handleKeyup(e) {
     togglePlay();
   else if (e.key === '-') {
     video.playbackRate -= 0.1
-    playbackRateInput.value = playbackRateOutput.value = video.playbackRate;
+    // playbackRateInput.value = playbackRateOutput.value = video.playbackRate;
   } else if (e.key === '+' || e.key === '=')
     video.playbackRate += 0.1
-    playbackRateInput.value = playbackRateOutput.value = video.playbackRate;
+    // playbackRateInput.value = playbackRateOutput.value = video.playbackRate;
 }
 
 function skip() {
@@ -54,7 +54,7 @@ function skip() {
 
 function handleRangeUpdate() {
   video[this.name] = this.value;
-  console.log(this.value);
+  // console.log(this.value);
 }
 
 function handleProgress() {
